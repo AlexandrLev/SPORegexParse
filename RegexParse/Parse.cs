@@ -7,7 +7,9 @@ namespace RegexParse
 {
     class Parse
     {
-
+        public string input = "0,5X^2+8X+5,5=0";
+        public string input2 = "1X^2+8X+1=0";
+        public string sint = "aX^2+bX+c=0";
         public void ParseEquation()
         {
             double a;
@@ -15,8 +17,7 @@ namespace RegexParse
             double c;
             double d;
             double[] result = new double[3] { 0, 0, 0 };
-            string input = "0,5X^2+8X+5,1=0";
-
+            
             var parts = input.Split("X^2");
             a = float.Parse(parts[0]);
             parts = parts[1].Split("X");
@@ -24,6 +25,13 @@ namespace RegexParse
             parts = parts[1].Split("=");
             c = float.Parse(parts[0]);
 
+            Console.WriteLine($"{sint}");
+            Console.WriteLine($"input: {input}");
+            Console.WriteLine($"a: {a}");
+            Console.WriteLine($"b: {b}");
+            Console.WriteLine($"c: {c}");
+
+            /*
             d = (b * b) - (4 * a * c);
 
             if (d < 0)
@@ -52,6 +60,7 @@ namespace RegexParse
             {
                 Console.WriteLine($"Корней нет");
             }
+            */
         }
 
 
@@ -62,16 +71,23 @@ namespace RegexParse
             double c;
             double d;
             double[] result = new double[3] { 0, 0, 0 };
-            string input = "1X^2+8X+1=0";
+            
 
             Regex regex = new Regex(@"([0-9]+)X\^2\+([0-9]+)X\+([0-9]+)=0");
-            Match match = regex.Match(input);
+            Match match = regex.Match(input2);
 
             
                 a = float.Parse(match.Groups[1].Value);
                 b = float.Parse(match.Groups[2].Value);
                 c = float.Parse(match.Groups[3].Value);
-            
+
+            Console.WriteLine($"{sint}");
+            Console.WriteLine($"input: {input2}");
+            Console.WriteLine($"a: {a}");
+            Console.WriteLine($"b: {b}");
+            Console.WriteLine($"c: {c}");
+
+            /*
             d = (b * b) - (4 * a * c);
 
             if (d < 0)
@@ -100,8 +116,8 @@ namespace RegexParse
             {
                 Console.WriteLine($"Корней нет");
             }
-            
-            
+            */
+
         }
     }
 }
