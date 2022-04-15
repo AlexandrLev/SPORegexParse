@@ -15,8 +15,8 @@ namespace RegexParse
             double a;
             double b;
             double c;
-            double d;
-            double[] result = new double[3] { 0, 0, 0 };
+            //double d;
+            //double[] result = new double[3] { 0, 0, 0 };
             
             var parts = input.Split("X^2");
             a = float.Parse(parts[0]);
@@ -69,8 +69,8 @@ namespace RegexParse
             double a;
             double b;
             double c;
-            double d;
-            double[] result = new double[3] { 0, 0, 0 };
+            //double d;
+            //double[] result = new double[3] { 0, 0, 0 };
             
 
             Regex regex = new Regex(@"([0-9]+)X\^2\+([0-9]+)X\+([0-9]+)=0");
